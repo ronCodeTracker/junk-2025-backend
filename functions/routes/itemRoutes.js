@@ -15,6 +15,7 @@ const Item = mongoose.model('Item', itemSchema);
 
 // POST: Add a new item
 router.post('/', async (req, res) => {
+     
     console.log("started post route");
     console.log("Parsed request body:", req.body); // Debug log
   try {
