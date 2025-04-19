@@ -5,7 +5,7 @@ const express = require('express');
 const serverless = require('serverless-http');
 const mongoose = require('mongoose');
 const cors = require('cors'); // Import the CORS middleware
-const itemRoutes = require('../routes/itemRoutes');
+const itemRoutes = require('./routes/itemRoutes');
 
 const app = express();
 
