@@ -6,6 +6,7 @@ const serverless = require('serverless-http');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 const itemRoutes = require('./routes/itemRoutes');
+const path = require('path');
 
 const app = express();
 
@@ -39,6 +40,14 @@ mongoose
 
 // Routes
 app.use('/api/items', itemRoutes);
+
+// Serve static files
+app.use(express.static(path.join(__dirname, 'static')));
+
+// Serve the landing page
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'static', 'index.html'));
+});
 
 // Export the app as a serverless function
 module.exports.handler = serverless(app);
