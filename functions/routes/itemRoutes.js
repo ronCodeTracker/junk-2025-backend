@@ -2,8 +2,15 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
-
+const bodyParser = require('body-parser')
 const router = express.Router();
+
+
+router.use(bodyParser.json())
+router.use(bodyParser.urlencoded({
+    extended: true
+}))
+
 
 // Define the Mongoose schema and model
 const itemSchema = new mongoose.Schema({
