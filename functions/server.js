@@ -11,22 +11,22 @@ const app = express();
 
 // Middleware
 
-app.use((req, res, next) => {
-  let rawData = '';
-  req.on('data', (chunk) => {
-    rawData += chunk;
-  });
-  req.on('end', () => {
-    try {
-      req.body = JSON.parse(rawData); // Manually parse JSON
-      console.log('Parsed JSON body:', req.body); // Debug log
-    } catch (err) {
-      console.error('Error parsing JSON:', err.message);
-      req.body = {}; // Set to an empty object if parsing fails
-    }
-    next();
-  });
-});
+//app.use((req, res, next) => {
+//  let rawData = '';
+//  req.on('data', (chunk) => {
+//    rawData += chunk;
+//  });
+//  req.on('end', () => {
+//    try {
+//      req.body = JSON.parse(rawData); // Manually parse JSON
+//      console.log('Parsed JSON body:', req.body); // Debug log
+//    } catch (err) {
+//      console.error('Error parsing JSON:', err.message);
+//      req.body = {}; // Set to an empty object if parsing fails
+//    }
+//    next();
+//  });
+//});
 
 //app.use(cors()); // Enable CORS for all routes
 //app.use(express.json()); // Parse JSON request bodies
