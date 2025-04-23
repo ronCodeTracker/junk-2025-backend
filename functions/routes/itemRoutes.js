@@ -6,10 +6,10 @@ const bodyParser = require('body-parser')
 const router = express.Router();
 
 
-router.use(bodyParser.json())
-router.use(bodyParser.urlencoded({
-    extended: true
-}))
+//router.use(bodyParser.json())
+//router.use(bodyParser.urlencoded({
+//    extended: true
+//}))
 
 
 // Define the Mongoose schema and model
@@ -24,7 +24,8 @@ const Item = mongoose.model('Item', itemSchema);
 router.post('/', async (req, res) => {
      
     console.log("started post route");
-    console.log("Parsed request body:", req.body.location); // Debug log
+    console.log("Parsed request body:", req.body); // Debug log
+    console.log("Parsed request body location:", req.body.location); 
   try {
     const { location, item } = req.body;
 
