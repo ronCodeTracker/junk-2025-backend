@@ -25,9 +25,10 @@ router.post('/', async (req, res) => {
      
     console.log("started post route");
     console.log("Parsed request body:", JSON.parse(req.body)); // Debug log
-    console.log("Parsed request body location:", req.body.location); 
+    console.log("Parsed request body location:", req.body.location);
+    const reqBody = JSON.parse(req.body); 
   try {
-    const { location, item } = req.body;
+    const { location, item } = reqBody;
 
     if (!location || !item) {
       return res.status(400).json({ error: 'Both location and item are required' });
