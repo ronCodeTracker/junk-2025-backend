@@ -10,8 +10,8 @@ const itemRoutes = require('./routes/itemRoutes');
 const app = express();
 
 // Middleware
-app.use(cors()); // Enable CORS for all routes
-app.use(express.json()); // Parse JSON request bodies
+//app.use(cors()); // Enable CORS for all routes
+//app.use(express.json()); // Parse JSON request bodies
 
 // MongoDB connection
 mongoose
