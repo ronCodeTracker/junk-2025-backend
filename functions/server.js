@@ -42,11 +42,11 @@ mongoose
 app.use('/api/items', itemRoutes);
 
 // Serve static files
-app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 // Serve the landing page
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'static', 'index.html'));
+  res.sendFile(path.join(__dirname, '../public', 'index.html'));
 });
 
 // Export the app as a serverless function
